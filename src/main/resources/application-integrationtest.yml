@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+
+baseURL: "http://localhost"
+
+aws:
+  region: us-east-1
+
+
+

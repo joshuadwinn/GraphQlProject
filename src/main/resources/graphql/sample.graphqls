@@ -1,0 +1,15 @@
+extend type Query {
+    sample(id: String!): Sample
+}
+
+extend type Mutation{
+    createSample(input: SampleInput!): Sample
+}
+
+input SampleInput {
+    id: String!
+}
+
+type Sample {
+    id: String!
+}
