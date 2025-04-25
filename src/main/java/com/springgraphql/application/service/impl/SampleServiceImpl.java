@@ -23,10 +23,7 @@ public class SampleServiceImpl implements SampleService {
 
     @Override
     public Mono<Sample> create(String token) {
-        UUID id = UUID.randomUUID();
-        Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("id", id);
-        return myWebClient.postMono("/api", requestBody, token, Sample.class);
+      return Mono.empty();
     }
 
     //Publish to the sink
