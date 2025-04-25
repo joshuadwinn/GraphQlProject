@@ -26,23 +26,12 @@ public class SampleController {
 
     @QueryMapping("sample")
     public Mono<Sample> getSample(GraphQLContext context, @Argument String id){
-        UUID accountUUID = UUID.fromString(id);
-        Optional<Object> authorizationToken = context.getOrEmpty(HttpHeaders.AUTHORIZATION);
-        if(authorizationToken.isPresent()) {
-            return sampleService.getSample(accountUUID, authorizationToken.get().toString());
-        } else {
-            return Mono.error(new ApiException(HttpStatus.UNAUTHORIZED, "Unauthorized request"));
-        }
+       return Mono.empty();
     }
 
     @MutationMapping("sample")
     public Mono<Sample> createSample(GraphQLContext context){
-        Optional<Object> authorizationToken = context.getOrEmpty(HttpHeaders.AUTHORIZATION);
-            if(authorizationToken.isPresent()) {
-            return sampleService.create(authorizationToken.get().toString());
-        } else {
-            return Mono.error(new ApiException(HttpStatus.UNAUTHORIZED, "Unauthorized request"));
-        }
+       return Mono.empty();
     }
 
     @SubscriptionMapping("sub")
